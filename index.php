@@ -59,6 +59,14 @@ $result_buku = mysqli_query($conn, $query_buku);
             background-color: #0056b3;
             color: white;
         }
+        .btn-cart {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-cart:hover {
+            background-color: #218838;
+            color: white;
+        }
         footer {
             background-color: #f8f9fa;
             border-top: 1px solid #e7e7e7;
@@ -89,6 +97,9 @@ $result_buku = mysqli_query($conn, $query_buku);
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> Cart</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -105,6 +116,7 @@ $result_buku = mysqli_query($conn, $query_buku);
                             <p class="card-text"><?php echo substr($row['sinopsis'], 0, 100); ?>...</p>
                             <p class="price">Rp<?php echo number_format($row['harga'], 0, ',', '.'); ?></p>
                             <a href="purchase.php?id=<?php echo $row['id']; ?>" class="btn btn-buy">Beli</a>
+                            <a href="cart.php?action=add&id=<?php echo $row['id']; ?>" class="btn btn-cart">Tambah ke Keranjang</a>
                         </div>
                     </div>
                 </div>
@@ -118,6 +130,6 @@ $result_buku = mysqli_query($conn, $query_buku);
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcndom/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
